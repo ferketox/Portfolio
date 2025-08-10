@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Zainab Usman - Entrepreneur & Digital Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #111111;
+            --card-bg: #1a1a1a;
+            --accent-color: #00ff88;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #666666;
+            --border-color: #333333;
+            --gradient-primary: linear-gradient(135deg, #00ff88, #00cc6a);
+            --gradient-dark: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 7vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        /*VVS Section*/
+        .vvs-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .vvs-content p{
+            margin-left: 60px;
+        }
+
+        .vvs-image{
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: var(--gradient-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: var(--gradient-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--primary-bg);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image {
+            height: 200px;
+            background: var(--gradient-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent-color);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .form-input {
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: var(--primary-bg);
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-bg);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-grey);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: var(--accent-color);
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation utilities */
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ZU</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <h1 class="hero-title">Zainab Usman</h1>
+            <p class="hero-subtitle">Entrepreneur & Visionary Business Architect</p>
+            <p class="hero-description">
+                Building innovative startups and scaling digital ventures with creative solutions. 
+                From concept to execution, I transform ideas into successful businesses.
+            </p>
+            <a href="#contact" class="cta-button">Let's Work Together</a>
+        </div>
+        
+        <!-- Floating particles -->
+        <div class="particle" style="top: 20%; left: 10%; width: 8px; height: 8px; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 80%; left: 90%; width: 12px; height: 12px; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 40%; left: 80%; width: 6px; height: 6px; animation-delay: 4s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title fade-in">About Me</h2>
+        <div class="about-content">
+            <div class="about-image fade-in">👨‍💼</div>
+            <div class="about-text fade-in">
+                <p>
+                    I'm a passionate entrepreneur with a track record of launching successful startups and executing high-impact digital marketing campaigns. My journey began with an internship in Digital Media Marketing at University of Engineering & Technology (UET), Lahore, where I discovered my passion for merging technology with business strategy.
+                </p>
+                <p>
+                    Over the years, I've worn many hats - from freelancer to startup founder, always driven by the desire to create innovative solutions that make a difference. My expertise spans across digital marketing, product development, and business strategy.
+                </p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item fade-in">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Startups Launched</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Happy Clients</span>
+            </div>
+        </div>
+    </section>
+
+    <!--VVS-->
+    <section id="vvs" class="section">
+        <h2 class="section-title fade-in">Venture Studio</h2>
+        <div class="vvs-content">
+            
+            <div class="about-text fade-in">
+                <p>
+                    <a href="vvs.html" class="project-link">VamBie Venture Studio</a> is a multidisciplinary venture creation hub dedicated to turning bold ideas into thriving businesses. We specialize in conceiving, launching, and scaling startups from the ground up, leveraging proven execution strategies, market insights, and creative innovation. Every company under VamBie’s wing is built with the long-term vision of disrupting industries, delivering sustainable value, and creating meaningful impact.
+                </p>
+                <p>
+                    Our portfolio spans multiple sectors — from digital services and e-commerce to emerging tech and creative brands — all united by a commitment to rapid execution, strategic growth, and entrepreneurial excellence.
+                </p>
+                <p><a href="vvs.html" class="project-link">Visit the Website</a></p>
+            </div>
+            <img class= "vvs-image" src="vvc.jpeg" alt="About image" />
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title fade-in">Experience</h2>
+        <div class="experience-timeline">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-date">2025 - Present</div>
+                    <h3 class="timeline-title">CEO & Founder</h3>
+                    <div class="timeline-company">VamBie Venture Studio</div>
+                    <p>Built to create and accelerate new startups, driving innovation and technology-forward solutions from concept to launch. Specialize in conceiving, launching, and scaling up startups from the ground up, leveraging proven execution strategies, market insights, and creative innovation.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-date">2024 - 2025</div>
+                    <h3 class="timeline-title">Digital Marketing Consultant</h3>
+                    <div class="timeline-company">Freelance</div>
+                    <p>Provided strategic digital marketing services to 25+ clients, increasing their online revenue by an average of 150% through innovative campaigns and growth hacking techniques.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-date">2024</div>
+                    <h3 class="timeline-title">Digital Media Marketing Intern</h3>
+                    <div class="timeline-company">University of Engineering & Technology (UET)</div>
+                    <p>Gained foundational experience in digital marketing strategies, social media management, and data analytics. Contributed to campaigns that increased engagement by 300%.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <h3 class="timeline-title">Freelance Web Developer</h3>
+                    <div class="timeline-company">Fiverr & Upwork</div>
+                    <p>Worked independently with startups and small businesses to design and develop custom websites tailored to their brand and business goals with main focus on clean UI/UX, performance optimization, and functionality — often using WordPress and no-code tools for fast, scalable results. Helped clients translate their ideas into digital products, blending technical skills with a strategic understanding of business needs.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-image">🛒</div>
+                <div class="project-content">
+                    <h3 class="project-title">Liberta</h3>
+                    <p class="project-description">
+                         A niche e-commerce dropshipping store specializing in high-quality Bluetooth headphones. Designed for audio enthusiasts and casual listeners alike, combines stylish design, wireless convenience, and competitive pricing. The store leverages targeted marketing and streamlined logistics to deliver a smooth customer experience from browsing to checkout.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">E-commerce & Dropshipping</span>
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">Conversion Optimization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Liberta</a>
+                        <a href="#" class="project-link">Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image">📩</div>
+                <div class="project-content">
+                    <h3 class="project-title">DramaPigeon</h3>
+                    <p class="project-description">
+                        A digital message-delivery platform that blends the nostalgia of letter-writing with the speed of social media. Users can craft personalized or anonymous messages, which are delivered directly to recipients’ Instagram inboxes along with a unique access code to reveal the content. Designed for both fun and heartfelt communication, DramaPigeon creates a playful yet meaningful way to connect online.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Express & Node.js</span>
+                        <span class="tag">Instagram API Integration</span>
+                        <span class="tag">User Privacy & Anonymity</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Case Study</a>
+                        <a href="#" class="project-link">DramaPigeon</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image">👩‍🎓</div>
+                <div class="project-content">
+                    <h3 class="project-title">Library of Ferketox</h3>
+                    <p class="project-description">
+                        A curated online collection of finance, entrepreneurship, and self-help books, offered free to readers worldwide. Designed as a one-page, minimal interface to provides quick access to resources that inspire personal growth, financial literacy, and entrepreneurial thinking; all in one accessible digital space.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Web Development</span>
+                        <span class="tag">Knowledge & Learning</span>
+                        <span class="tag">Content Curation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Case Study</a>
+                        <a href="#" class="project-link">LOF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image">🤓</div>
+                <div class="project-content">
+                    <h3 class="project-title">Memozrella</h3>
+                    <p class="project-description">
+                         A curated digital media brand that blends humor, cultural commentary, and trend-driven storytelling through a visually consistent Instagram presence. Beyond entertainment, it explores the mechanics of social virality and digital influence in the modern attention economy.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Visual Branding</span>
+                        <span class="tag">Social Media Analytics</span>
+                        <span class="tag">Content Strategy</span>
+                        <span class="tag">Audience Growth</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Case Study</a>
+                        <a href="#" class="project-link">Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image">📓</div>
+                <div class="project-content">
+                    <h3 class="project-title">Dear Diary</h3>
+                    <p class="project-description">
+                        A public, online diary platform where people share their thoughts, stories, and daily experiences with the world. Users can write under their name or anonymously, creating an open space for authentic expression, connection, and shared human experiences.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Express.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Project in Progress</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title fade-in">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <div class="skill-icon">💼</div>
+                <h3 class="skill-title">Business Strategy</h3>
+                <div class="skill-list">
+                    Market Analysis<br>
+                    Product Development<br>
+                    Organic Marketing<br>
+                    Growth Hacking
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">📱</div>
+                <h3 class="skill-title">Digital Marketing</h3>
+                <div class="skill-list">
+                    Social Media Marketing<br>
+                    SEO/SEM<br>
+                    Content Strategy<br>
+                    Analytics & ROI
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">👩</div>
+                <h3 class="skill-title">Consultant</h3>
+                <div class="skill-list">
+                    Entrepreneurship Advisor<br>
+                    Business Consultant<br>
+                    Business Strategy<br>
+                    Startup Growth & Freelancing Mentor
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">👩‍💻</div>
+                <h3 class="skill-title">Task Execution</h3>
+                <div class="skill-list">
+                    Day to Day Task Execution<br>
+                    Planning & BluePrints<br>
+                    Scheduling & Organizing Data<br>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">⚙️</div>
+                <h3 class="skill-title">Technology</h3>
+                <div class="skill-list">
+                    Full-Stack Development<br>
+                    Cloud Architecture<br>
+                    AI/ML Integration<br>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">👥</div>
+                <h3 class="skill-title">Leadership</h3>
+                <div class="skill-list">
+                    Team Management<br>
+                    Project Planning<br>
+                    Stakeholder Relations<br>
+                    Mentoring
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title fade-in">Let's Connect</h2>
+        <div class="contact-content">
+            <p class="fade-in" style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
+                Ready to bring your next big idea to life? Let's discuss how we can work together to create something amazing.
+            </p>
+            
+            <form class="contact-form fade-in">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Your Name" required>
+                    <input type="email" class="form-input" placeholder="Your Email" required>
+                </div>
+                <input type="text" class="form-input" placeholder="Subject" required>
+                <textarea class="form-input form-textarea" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <!--<a href="#" class="social-link">📧</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">📸</a>-->
+            <a href="#contact"><i class="fa fa-envelope"></i></a>
+            <a href="#projects"><i class="fa fa-briefcase"></i></a>
+            <a href="https://www.instagram.com/the_zainab_usman/"></a><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            
+        </div>
+        <p style="color: var(--text-muted);">
+            © 2025 Portfolio/Zainab Usman powered by <b>VamBie Venture Studio</b>
+        </p>
+        <p style="color: var(--text-muted);">
+           - Zainab Usman Production. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Make hero content visible immediately
+        setTimeout(() => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.classList.add('visible');
+            }
+        }, 100);
+
+        // Typing effect for hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            typeWriter(heroTitle, 'Zainab Usman', 150);
+        });
+
+        // Add dynamic particle generation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const size = Math.random() * 8 + 4;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            
+            document.querySelector('.hero').appendChild(particle);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Generate particles periodically
+        setInterval(createParticle, 3000);
+
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation and submission simulation
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.textContent = 'Message Sent!';
+                submitBtn.style.background = 'linear-gradient(135deg, #00cc6a, #00ff88)';
+                
+                // Reset form
+                this.reset();
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = 'var(--gradient-primary)';
+                }, 2000);
+            }, 1500);
+        });
+
+        // Add hover effect to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+        });
+
+        // Add click effect to CTA buttons
+        document.querySelectorAll('.cta-button, .submit-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add CSS for ripple effect
+        const style = document.createElement('style');
+        style.textContent = `
+            .cta-button, .submit-btn {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Stats counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const targets = [15, 5, 50]; // Target numbers for each stat
+            
+            stats.forEach((stat, index) => {
+                const target = targets[index];
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + (index === 2 ? '+' : (index === 0 ? '+' : ''));
+                }, 20);
+            });
+        }
+
+        // Trigger stats animation when section is visible
+        const statsSection = document.querySelector('.stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Mobile menu toggle (for future enhancement)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+
+        // Add mobile menu styles
+        const mobileStyle = document.createElement('style');
+        mobileStyle.textContent = `
+            @media (max-width: 768px) {
+                .nav-links {
+                    position: fixed;
+                    top: 70px;
+                    left: -100%;
+                    width: 100%;
+                    height: calc(100vh - 70px);
+                    background: var(--primary-bg);
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    transition: left 0.3s ease;
+                }
+                
+                .nav-links.mobile-active {
+                    left: 0;
+                }
+                
+                .mobile-menu-btn {
+                    display: block;
+                    background: none;
+                    border: none;
+                    color: var(--text-primary);
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+            
+            @media (min-width: 769px) {
+                .mobile-menu-btn {
+                    display: none;
+                }
+            }
+        `;
+        document.head.appendChild(mobileStyle);
+
+        // Initialize all animations and effects
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add animation classes to elements that should animate in
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.classList.add('animate-in');
+            });
+            
+            // Trigger initial hero animation immediately
+            setTimeout(() => {
+                document.querySelector('.hero-content').classList.add('visible');
+            }, 100);
+            
+            // Observe all fade-in elements for scroll animations
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
