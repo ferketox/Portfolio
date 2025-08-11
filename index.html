@@ -541,6 +541,38 @@
         }
 
         /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 65, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00ff41;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+
+        /* Footer 
         .footer {
             background: var(--secondary-bg);
             padding: 3rem 2rem 2rem;
@@ -570,7 +602,7 @@
             color: var(--text-secondary);
             font-size: 1.5rem;
             transition: color 0.3s ease;
-        }
+        }*/
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -703,9 +735,9 @@
                 <p>
                     Our portfolio spans multiple sectors — from digital services and e-commerce to emerging tech and creative brands — all united by a commitment to rapid execution, strategic growth, and entrepreneurial excellence.
                 </p>
-                <p><a href="vvs.html" class="project-link">Visit the Website</a></p>
+                <p>Visit <a href="vvs.html" class="project-link">VamBie</a></p>
             </div>
-            <img class= "vvs-image" src="vvc.jpeg" alt="About image" />
+            <img class= "vvs-image" src="vvs.jpeg" alt="About image" />
         </div>
     </section>
 
@@ -771,14 +803,15 @@
                          A niche e-commerce dropshipping store specializing in high-quality Bluetooth headphones. Designed for audio enthusiasts and casual listeners alike, combines stylish design, wireless convenience, and competitive pricing. The store leverages targeted marketing and streamlined logistics to deliver a smooth customer experience from browsing to checkout.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">E-commerce & Dropshipping</span>
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">Dropshipping</span>
                         <span class="tag">Digital Marketing</span>
                         <span class="tag">Conversion Optimization</span>
                     </div>
-                    <div class="project-links">
+                    <!--<div class="project-links">
                         <a href="#" class="project-link">Liberta</a>
                         <a href="#" class="project-link">Case Study</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -790,14 +823,15 @@
                         A digital message-delivery platform that blends the nostalgia of letter-writing with the speed of social media. Users can craft personalized or anonymous messages, which are delivered directly to recipients’ Instagram inboxes along with a unique access code to reveal the content. Designed for both fun and heartfelt communication, DramaPigeon creates a playful yet meaningful way to connect online.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Express & Node.js</span>
-                        <span class="tag">Instagram API Integration</span>
-                        <span class="tag">User Privacy & Anonymity</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">API Integration</span>
+                        <span class="tag">Privacy & Anonymity</span>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">Case Study</a>
+                    <!--<div class="project-links">
                         <a href="#" class="project-link">DramaPigeon</a>
-                    </div>
+                        <a href="#" class="project-link">Case Study</a>
+                    </div>-->
                 </div>
             </div>
 
@@ -813,10 +847,10 @@
                         <span class="tag">Knowledge & Learning</span>
                         <span class="tag">Content Curation</span>
                     </div>
-                    <div class="project-links">
+                    <!--<div class="project-links">
                         <a href="#" class="project-link">Case Study</a>
                         <a href="#" class="project-link">LOF</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -833,10 +867,10 @@
                         <span class="tag">Content Strategy</span>
                         <span class="tag">Audience Growth</span>
                     </div>
-                    <div class="project-links">
+                    <!--<div class="project-links">
                         <a href="#" class="project-link">Case Study</a>
                         <a href="#" class="project-link">Page</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -852,9 +886,9 @@
                         <span class="tag">MongoDB</span>
                         <span class="tag">Express.js</span>
                     </div>
-                    <div class="project-links">
+                    <!--<div class="project-links">
                         <a href="#" class="project-link">Project in Progress</a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -940,11 +974,11 @@
             
             <form class="contact-form fade-in">
                 <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Your Name" required>
-                    <input type="email" class="form-input" placeholder="Your Email" required>
+                    <input type="text" name="user_name" class="form-input" placeholder="Your Name" required>
+                    <input type="email" name="user_email" class="form-input" placeholder="Your Email" required>
                 </div>
-                <input type="text" class="form-input" placeholder="Subject" required>
-                <textarea class="form-input form-textarea" placeholder="Your Message" required></textarea>
+                <input type="text" name="subject" class="form-input" placeholder="Subject" required>
+                <textarea class="form-input form-textarea" name="message" placeholder="Your Message" required></textarea>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
@@ -957,10 +991,9 @@
             <a href="#" class="social-link">🐦</a>
             <a href="#" class="social-link">💼</a>
             <a href="#" class="social-link">📸</a>-->
-            <a href="#contact"><i class="fa fa-envelope"></i></a>
+            <a href="mailto:ferketox@gmail.com"><i class="fa fa-envelope"></i></a>
             <a href="#projects"><i class="fa fa-briefcase"></i></a>
-            <a href="https://www.instagram.com/the_zainab_usman/"></a><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/the_zainab_usman?igsh=MXQ1cGFiYXFwYno1aA=="><i class="fab fa-instagram"></i></a>
             
         </div>
         <p style="color: var(--text-muted);">
@@ -971,7 +1004,27 @@
         </p>
     </footer>
 
+    <!-- Load EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
+
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init("ZIW3y4PjFh1yZ8MI2"); // Replace with your actual public key from EmailJS
+        })();
+
+        // Handle the form submission
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // stop the page from reloading
+            emailjs.sendForm("service_t00sq5y", "template_ucselhh", this)
+            .then(function() {
+                alert("Message sent successfully!");
+            }, function(error) {
+                console.error("Failed to send message:", error);
+                alert("Failed to send message. Check console for details.");
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
