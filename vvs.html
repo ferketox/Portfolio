@@ -769,7 +769,27 @@
         </div>
     </footer>
 
+    <!-- Load EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init("ZIW3y4PjFh1yZ8MI2"); // Replace with your actual public key from EmailJS
+        })();
+
+        // Handle the form submission
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // stop the page from reloading
+            emailjs.sendForm("service_t00sq5y", "template_ucselhh", this)
+            .then(function() {
+                alert("Message sent successfully!");
+            }, function(error) {
+                console.error("Failed to send message:", error);
+                alert("Failed to send message. Check console for details.");
+            });
+        }); 
+
+        
        const gridBackground = document.querySelector('.grid-background');
         const gridSection = document.querySelector('.grid-section');
 
@@ -889,4 +909,5 @@
         });
     </script>
 </body>
+
 </html>
